@@ -18,20 +18,32 @@ function createCom() {
 
 
 <template>
- <h1>{{header}}</h1>
-  <img :src="urls" />
-  <p>{{text}}</p>
-  <input
-      ref="inputRef"
-      placeholder="коментарии"
-      @keyup.enter="createCom"/>
+  <el-card class="photos-container">
+    <template #header>
+      {{header}}
+    </template>
+    <el-row>
+      <el-col :span="12">
+        <img :src="urls" />
+      </el-col>
+      <el-col :span="12">
+        <p>{{text}}</p>
+      </el-col>
+    </el-row>
 
-  <hr>
+  </el-card>
+
+
+<!-- <h1>{{header}}</h1>-->
+
 
 </template>
 
 <style scoped>
 img {
   height: 200px;
+}
+.photos-container {
+  margin-bottom: 20px;
 }
 </style>
