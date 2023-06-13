@@ -4,11 +4,17 @@ import Photos from "./components/Photos.vue";
 import Coments from "./components/Coments.vue";
 import {ref} from "vue";
 const coments = ref(['я первый'])
+const count = ref(42)
+function inc(){
+  count.value++
+  console.log(count.value)
+}
 </script>
 
 
 <template>
-
+  <el-button @click="inc">Нажми на меня</el-button>
+  <p>{{count}}</p>
  <Photos
    header="Поездка в питер"
    urls="https://img3.fonwall.ru/o/nq/acura-nsx-white-side-view-supercars.jpeg?route=mid&h=750"
