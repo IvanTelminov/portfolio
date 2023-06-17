@@ -2,17 +2,14 @@
 const props = defineProps({
   header: String,
   urls: String,
-  text: String
+  text: String,
+  xurls: String
 })
 import {ref} from "vue";
 const inputRef = ref(null)
 const emit = defineEmits(['comCreated'])
-function createCom() {
-  const inputElement = inputRef.value
-  const coments = inputElement.value
-  inputElement.value = ''
-  emit("comCreated", coments)
-}
+function bottun (){
+  window.location.href=props.xurls}
 </script>
 
 
@@ -23,11 +20,16 @@ function createCom() {
       {{header}}
     </template>
     <el-row>
-      <el-col :span="12">
+      <el-col :span="10">
         <img :src="urls" />
       </el-col>
-      <el-col :span="12">
+      <el-col :span="10">
         <p>{{text}}</p>
+      </el-col>
+      <el-col :span="4">
+        <el-col :span="12">
+          <el-button type="success" @click="bottun" round>Подробнее</el-button>
+        </el-col>
       </el-col>
     </el-row>
 
